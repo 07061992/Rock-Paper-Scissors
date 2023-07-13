@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockPaperScissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<h1>Choose your hand!</h1>
+
+<button class="hand" id="rock" onclick="armazenarEscolha('rock')"> &#9994 </button>
+
+<button class="hand" id="paper" onclick="armazenarEscolha('paper')"> &#129306 </button>
+
+<button class="hand" id="scissors" onclick="armazenarEscolha('scissors')""> &#9996 </button> <br>
+
+<button class="go" type="text" onclick="resultadoDoJogo ()" >GO!</button>
+
+<div id="resp">
+    Resp:
+</div>
+
+<footer>
+    &copy Beto Pereira
+</footer>
+</div>
+<script src="RockPaperScissors.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  colocar emoji  resp.innerHTML += ` ${c} \u{1F449}
+  &#9994; U+270A    rock        \u{270A }
+
+  &#129306; U+1F91A paper   \u {1F91A}
+
+  &#9996; U+270C scissors      \u{270C}
+-->
