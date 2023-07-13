@@ -6,6 +6,23 @@ let computerChoice = ['rock','paper','scissors']
 let resp = window.document.getElementById('resp')
 let escolhaUsuario;
 let escolhaComputador;
+const buttons = document.querySelectorAll('.hand')
+let selectedButton = null;
+
+
+buttons.forEach(button =>{
+    button.addEventListener('click', () =>{
+        if(selectedButton){
+            selectedButton.classList.remove('handselected')
+        }
+    button.classList.add('handselected');
+    selectedButton = button;
+         
+    })
+  
+})
+
+
 
 function computerPlay (){
     let indiceSorteado = Math.floor(Math.random()* computerChoice.length)
@@ -60,3 +77,7 @@ function resultadoDoJogo (){
 }
 
 
+
+
+//buttons.forEach(btn => btn.classList.remove('hand'))
+//button.classList.add("handselected")
