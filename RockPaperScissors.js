@@ -39,7 +39,7 @@ function resultadoDoJogo (){
     } 
     else if (escolhaUsuario === 'rock' && escolhaComputador ==='scissors')
     {
-        resp.innerHTML = ` WIM <br>Player: \u{270A}${escolhaUsuario}<br> Computer: \u{270C} ${escolhaComputador}<br><br> rock beats scissors`
+        resp.innerHTML = ` WIN <br>Player: \u{270A}${escolhaUsuario}<br> Computer: \u{270C} ${escolhaComputador}<br><br> rock beats scissors`
     } 
     else if (escolhaUsuario === 'paper' && escolhaComputador ==='scissors')
     {
@@ -47,7 +47,7 @@ function resultadoDoJogo (){
     } 
     else if (escolhaUsuario === 'paper' && escolhaComputador ==='rock')
     {
-        resp.innerHTML = ` WIM <br>Player: \u{1F91A} ${escolhaUsuario}<br> Computer: \u{270A} ${escolhaComputador}<br><br> paper beats rock` 
+        resp.innerHTML = ` WIN <br>Player: \u{1F91A} ${escolhaUsuario}<br> Computer: \u{270A} ${escolhaComputador}<br><br> paper beats rock` 
     } 
     else if (escolhaUsuario === 'scissors' && escolhaComputador ==='rock')
     {
@@ -55,7 +55,7 @@ function resultadoDoJogo (){
     } 
     else if (escolhaUsuario === 'scissors' && escolhaComputador ==='paper')
     {
-        resp.innerHTML = ` WIM <br>Player: \u{270C} ${escolhaUsuario}<br> Computer: \u{1F91A} ${escolhaComputador}<br> <br>scissors beats paper` 
+        resp.innerHTML = ` WIN <br>Player: \u{270C} ${escolhaUsuario}<br> Computer: \u{1F91A} ${escolhaComputador}<br> <br>scissors beats paper` 
     } 
 }
 
