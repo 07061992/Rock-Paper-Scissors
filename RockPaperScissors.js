@@ -8,6 +8,18 @@ let escolhaUsuario;
 let escolhaComputador;
 const buttons = document.querySelectorAll('.hand')
 let selectedButton = null;
+let round = window.document.getElementById('round')
+
+let playerPoints = window.document.getElementById('playerPoints')
+let computerPoints = window.document.getElementById('computerPoints')
+
+let playerScore = 0;
+let computerScore = 0
+
+
+
+let roundCounter = 1
+
 
 
 buttons.forEach(button =>{
@@ -43,37 +55,45 @@ function armazenarEscolha(opcao) {
 
  
 function resultadoDoJogo (){
+    
     let escolhaUsuario = armazenarEscolha(choice)
     let escolhaComputador = computerPlay()
     
-    
+    roundCounter = roundCounter + 1
+
     if (escolhaUsuario === escolhaComputador){
-    resp.innerHTML = `DRAW ${escolhaUsuario} ${escolhaComputador}`
+    resp.innerHTML = `<strong>DRAW</strong> ${escolhaUsuario} ${escolhaComputador}`
     } 
     else if (escolhaUsuario === 'rock' && escolhaComputador ==='paper')
-    {
-        resp.innerHTML = ` LOST <br>Player: \u{270A} ${escolhaUsuario}<br> Computer: \u{1F91A} ${escolhaComputador}<br><br>  paper beats rock  ` 
+    {   computerScore = computerScore + 1 
+        resp.innerHTML = `<strong> LOST</strong> <br>Player: \u{270A} ${escolhaUsuario}<br> Computer: \u{1F91A} ${escolhaComputador}<br><br>  paper beats rock  ` 
     } 
     else if (escolhaUsuario === 'rock' && escolhaComputador ==='scissors')
-    {
-        resp.innerHTML = ` WIN <br>Player: \u{270A}${escolhaUsuario}<br> Computer: \u{270C} ${escolhaComputador}<br><br> rock beats scissors`
+    {  playerScore = playerScore + 1
+        resp.innerHTML = `<strong> WIN</strong> <br>Player: \u{270A}${escolhaUsuario}<br> Computer: \u{270C} ${escolhaComputador}<br><br> rock beats scissors`
     } 
     else if (escolhaUsuario === 'paper' && escolhaComputador ==='scissors')
-    {
-        resp.innerHTML = ` LOST <br>Player: \u{1F91A} ${escolhaUsuario}<br> Computer: \u{270C} ${escolhaComputador}<br><br> scissors beats paper` 
+    {   computerScore = computerScore + 1 
+        resp.innerHTML = `<strong> LOST</strong> <br>Player: \u{1F91A} ${escolhaUsuario}<br> Computer: \u{270C} ${escolhaComputador}<br><br> scissors beats paper` 
     } 
     else if (escolhaUsuario === 'paper' && escolhaComputador ==='rock')
-    {
-        resp.innerHTML = ` WIN <br>Player: \u{1F91A} ${escolhaUsuario}<br> Computer: \u{270A} ${escolhaComputador}<br><br> paper beats rock` 
+    {   playerScore = playerScore + 1
+        resp.innerHTML = `<strong> WIN</strong> <br>Player: \u{1F91A} ${escolhaUsuario}<br> Computer: \u{270A} ${escolhaComputador}<br><br> paper beats rock` 
     } 
     else if (escolhaUsuario === 'scissors' && escolhaComputador ==='rock')
-    {
-        resp.innerHTML = ` LOST <br>Player: \u{270C} ${escolhaUsuario}<br> Computer: \u{270A} ${escolhaComputador}<br><br> rock beats scissors` 
+    {   computerScore = computerScore + 1 
+        resp.innerHTML = `<strong> LOST</strong> <br>Player: \u{270C} ${escolhaUsuario}<br> Computer: \u{270A} ${escolhaComputador}<br><br> rock beats scissors` 
     } 
     else if (escolhaUsuario === 'scissors' && escolhaComputador ==='paper')
-    {
-        resp.innerHTML = ` WIN <br>Player: \u{270C} ${escolhaUsuario}<br> Computer: \u{1F91A} ${escolhaComputador}<br> <br>scissors beats paper` 
+    {   playerScore = playerScore + 1
+        resp.innerHTML = ` <strong>WIN</strong> <br>Player: \u{270C} ${escolhaUsuario}<br> Computer: \u{1F91A} ${escolhaComputador}<br> <br>scissors beats paper` 
     } 
+
+    
+      round.innerHTML  = ` Round: ${roundCounter}`
+      playerPoints.innerHTML = `Player : ${playerScore}`
+      computerPoints.innerHTML = `Computer ${computerScore}`
+
 }
 
 
